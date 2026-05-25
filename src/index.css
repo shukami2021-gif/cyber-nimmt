@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cinzel", "Playfair Display", serif;
+  --font-sans: "Montserrat", "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Custom scrollbars and refined scroll animations */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Sophisticated glowing borders */
+@keyframes delicateGlow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(161, 98, 7, 0.15), inset 0 0 8px rgba(161, 98, 7, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(161, 98, 7, 0.35), inset 0 0 15px rgba(161, 98, 7, 0.1);
+  }
+}
+
+.animate-delicate-glow {
+  animation: delicateGlow 4s infinite ease-in-out;
+}

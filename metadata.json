@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Nimmt Board Game",
+  "description": "特殊スキル、大ダメージカットイン、電脳サイバー牛デザインを融合させた新次元ニムト（6nimmt）ボードゲーム。CPUを罠にはめて大マイナス点を叩き込め！",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
