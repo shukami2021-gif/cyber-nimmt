@@ -1,4 +1,4 @@
-# Build stage
+# ビルドステージ: Node.js を使用してプロジェクトをビルド
 FROM node:20-alpine AS build
 
 WORKDIR /app
@@ -9,14 +9,11 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# Production stage
+# 実行ステージ: 軽量な Nginx イメージを使用して静的ファイルを配信
 FROM nginx:stable-alpine
 
-# Copy build artifacts from build stage to nginx
+# ビルド済みのファイルを Nginx の公開ディレクトリにコピー
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose port 80
 EXPOSE 80
-
-# Run nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
