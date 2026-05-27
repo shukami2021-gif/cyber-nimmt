@@ -1,5 +1,5 @@
 steps:
-  # ① ソースコードを元に、Dockerイメージ（アプリのパッケージ）を自動で組み立てて保存する
+  # ① ソースコードを元に、アプリのパッケージを自動で組み立てる
   - name: 'gcr.io/k8s-skaffold/pack'
     args:
       - 'build'
@@ -7,17 +7,17 @@ steps:
       - '--builder'
       - 'gcr.io/buildpacks/builder:v1'
 
-  # ② 組み立てたパッケージを、Cloud Run（本番環境）へガツンとデプロイする
+  # ② 組み立てたパッケージを、正しい場所（asia-east1）へ上書きデプロイする
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     args:
       - 'run'
       - 'deploy'
-      - 'nimmt-board-game' # 以前作ったCloud Runのサービス名に合わせてね
+      - 'nimmt-board-game'
       - '--image'
       - 'gcr.io/$PROJECT_ID/nimmt-board-game'
       - '--region'
-      - 'us-east1' # 以前のURLに「east1」とあったので、おそらくus-east1なのだ！
+      - 'asia-east1'
       - '--allow-unauthenticated'
 
 options:
