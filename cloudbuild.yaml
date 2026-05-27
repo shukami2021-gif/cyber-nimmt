@@ -1,23 +1,19 @@
 steps:
-  # ① ソースコードを元に、アプリのパッケージを自動で組み立てる
-  - name: 'gcr.io/k8s-skaffold/pack'
-    args:
-      - 'build'
-      - 'gcr.io/$PROJECT_ID/nimmt-board-game'
-      - '--builder'
-      - 'gcr.io/buildpacks/builder:v1'
+  # ① 工場に「Node.js 20を使うよ！」と伝えてから組み立てる
+  - name: 'gcr.io/google-appengine/nodejs'
+    args: ['bash', '-c', 'npm install && npm run build']
+    env:
+      - 'GOOGLE_NODE_RUNTIMES_VERSION=20'
 
-  # ② 組み立てたパッケージを、正しい場所（asia-east1）へ上書きデプロイする
+  # ② 組み立てたアプリを Cloud Run へデプロイする
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     args:
       - 'run'
       - 'deploy'
       - 'nimmt-board-game'
-      - '--image'
-      - 'gcr.io/$PROJECT_ID/nimmt-board-game'
-      - '--region'
-      - 'asia-east1'
+      - '--source=.'
+      - '--region=asia-east1'
       - '--allow-unauthenticated'
 
 options:
