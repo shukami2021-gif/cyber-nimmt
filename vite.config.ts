@@ -1,20 +1,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [react(), tablecloth()], // 元々あったプラグイン構成
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '.'),
     },
   },
   server: {
-    // HMR などの既存設定
     hmr: process.env.DISABLE_HMR !== 'true',
     watch: process.env.DISABLE_HMR === 'true' ? null : {},
   },
-  // ↓↓↓ ここに正しく追加します ↓↓↓
+  // ↓↓↓ ここに安全にホスト許可を追加します ↓↓↓
   preview: {
     allowedHosts: true
   }
