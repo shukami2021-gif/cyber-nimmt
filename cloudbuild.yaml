@@ -1,9 +1,8 @@
 steps:
-  # ① Node.js のビルド環境。バージョンは有効な「24」を指定します。
-  - name: 'gcr.io/google-appengine/nodejs'
-    args: ['bash', '-c', 'npm install && npm run build']
-    env:
-      - 'GOOGLE_NODEJS_RUNTIMES_VERSION=26'
+  # ① ビルド環境。最新の構文を正しく解釈できる Node.js 22 の公式環境を使用します
+  - name: 'node:22'
+    entrypoint: 'npm'
+    args: ['run', 'build']
 
   # ② 組み立てたアプリを、正しい名前・正しいリージョン（東京）で Cloud Run へデプロイする
   - name: 'gcr.io/google-cloud-sdk/cloud-sdk'
