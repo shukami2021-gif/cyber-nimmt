@@ -1,11 +1,11 @@
 steps:
-  # ① ビルド環境（Node.js 22）。まず依存パッケージをインストールしてから、ビルドを実行します
+  # ① ビルド環境（Node.js 22）。依存パッケージをインストールしてビルド
   - name: 'node:22'
     entrypoint: 'bash'
     args: ['-c', 'npm install && npm run build']
 
-  # ② 組み立てたアプリを、正しい名前・正しいリージョン（東京）で Cloud Run へデプロイする
-  - name: 'gcr.io/google-cloud-sdk/cloud-sdk'
+  # ② 組み立てたアプリを Cloud Run へデプロイする（ツールを最新の場所に変更）
+  - name: 'google/cloud-sdk:latest'
     entrypoint: 'gcloud'
     args:
       - 'run'
