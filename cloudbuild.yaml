@@ -4,7 +4,7 @@ steps:
     entrypoint: 'bash'
     args: ['-c', 'npm install && npm run build']
 
-  # ② 組み立てたアプリを Cloud Run へデプロイする（起動コマンドを指定）
+  # ② 組み立てたアプリを Cloud Run へデプロイする
   - name: 'google/cloud-sdk:latest'
     entrypoint: 'gcloud'
     args:
@@ -14,7 +14,7 @@ steps:
       - '--source=.'
       - '--region=asia-northeast1'
       - '--allow-unauthenticated'
-      - '--command=npm,run,start' # ←★この行を最後に追加します
+      - '--command=npm,start' # ←★「run」を抜いて「npm,start」に修正します
 
 options:
   logging: CLOUD_LOGGING_ONLY
