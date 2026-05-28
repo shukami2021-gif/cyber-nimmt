@@ -3,7 +3,7 @@ steps:
   - name: 'gcr.io/google-appengine/nodejs'
     args: ['bash', '-c', 'npm install && npm run build']
     env:
-      - 'GOOGLE_NODEJS_RUNTIMES_VERSION=24'
+      - 'GOOGLE_NODEJS_RUNTIMES_VERSION=26'
 
   # ② 組み立てたアプリを、正しい名前・正しいリージョン（東京）で Cloud Run へデプロイする
   - name: 'gcr.io/google-cloud-sdk/cloud-sdk'
