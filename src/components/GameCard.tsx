@@ -40,7 +40,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   let colorTheme = {
     border: 'border-zinc-805/80 shadow-[0_4px_16px_rgba(0,0,0,0.55)]',
     bg: 'bg-gradient-to-b from-zinc-900 to-zinc-950 backdrop-blur-md',
-    text: 'text-zinc-200 group-hover:text-amber-200 font-display font-semibold',
+    text: 'text-zinc-200 group-hover:text-fuchsia-200 font-display font-semibold',
     glow: 'group-hover:border-zinc-700 shadow-[0_2px_10px_rgba(0,0,0,0.3)]',
     tagBg: 'bg-zinc-800/80 text-zinc-400 border border-zinc-700/50',
     badgeGlow: 'shadow-[0_0_6px_rgba(255,255,255,0.15)]',
@@ -49,12 +49,12 @@ export const GameCard: React.FC<GameCardProps> = ({
   if (penalty === 2) {
     // 2 bull heads
     colorTheme = {
-      border: 'border-amber-900/40 shadow-[0_4px_18px_rgba(0,0,0,0.6)]',
+      border: 'border-fuchsia-900/40 shadow-[0_4px_18px_rgba(0,0,0,0.6)]',
       bg: 'bg-gradient-to-b from-[#1c1a16] to-zinc-950',
-      text: 'text-amber-500 font-serif font-bold',
-      glow: 'group-hover:border-amber-700 shadow-[0_0_12px_rgba(180,83,9,0.15)]',
-      tagBg: 'bg-amber-950/70 text-amber-300 border border-amber-900/45',
-      badgeGlow: 'shadow-[0_0_8px_rgba(245,158,11,0.4)]',
+      text: 'text-fuchsia-500 font-serif font-bold',
+      glow: 'group-hover:border-fuchsia-700 shadow-[0_0_12px_rgba(219,39,119,0.15)]',
+      tagBg: 'bg-fuchsia-950/70 text-fuchsia-300 border border-fuchsia-900/45',
+      badgeGlow: 'shadow-[0_0_8px_rgba(236,72,153,0.4)]',
     };
   } else if (penalty === 3) {
     // 3 bull heads
@@ -104,11 +104,11 @@ export const GameCard: React.FC<GameCardProps> = ({
             key={i}
             className={`w-1.5 h-1.5 rounded-full ${
               penalty >= 5
-                ? 'bg-red-500'
+                ? 'bg-rose-500'
                 : penalty === 3
                 ? 'bg-emerald-400'
                 : penalty === 2
-                ? 'bg-amber-500'
+                ? 'bg-fuchsia-500'
                 : 'bg-zinc-400'
             } ${colorTheme.badgeGlow}`}
             title={`${penalty} Hazard Level`}
@@ -123,23 +123,23 @@ export const GameCard: React.FC<GameCardProps> = ({
     return (
       <div
         id={`card-hidden-${value}`}
-        className={`relative ${dimensions} flex flex-col items-center justify-center cursor-not-allowed select-none bg-gradient-to-br from-[#121316] via-[#1a1b20] to-[#0d0e11] border border-amber-600/20 shadow-[0_8px_24px_rgba(0,0,0,0.85)] ${
-          selected ? 'ring-2 ring-amber-500 scale-105 border-amber-400' : ''
+        className={`relative ${dimensions} flex flex-col items-center justify-center cursor-not-allowed select-none bg-gradient-to-br from-[#121316] via-[#1a1b20] to-[#0d0e11] border border-fuchsia-600/20 shadow-[0_8px_24px_rgba(0,0,0,0.85)] ${
+          selected ? 'ring-2 ring-fuchsia-500 scale-105 border-fuchsia-400' : ''
         }`}
       >
         {/* Subtle grid mesh */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.2)_50%)] bg-[size:100%_4px] opacity-10" />
         
         {/* Cow watermark pattern */}
-        <svg viewBox="0 0 100 100" className="w-12 h-12 text-amber-500/15 absolute pointer-events-none">
+        <svg viewBox="0 0 100 100" className="w-12 h-12 text-fuchsia-500/15 absolute pointer-events-none">
           <path d="M 30 20 Q 5 10 10 -15 Q 25 10 35 25" fill="none" stroke="currentColor" strokeWidth="1.5" />
           <path d="M 70 20 Q 95 10 90 -15 Q 75 10 65 25" fill="none" stroke="currentColor" strokeWidth="1.5" />
           <polygon points="50 15, 75 55, 65 85, 35 85, 25 55" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3,2" />
           <ellipse cx="50" cy="85" rx="10" ry="5" fill="none" stroke="currentColor" strokeWidth="1.2" />
         </svg>
 
-        <span className="text-[10px] text-amber-600/40 tracking-[0.2em] font-serif select-none">REWRITER</span>
-        <div className="w-6 h-0.5 bg-amber-500/30 rounded mt-1" />
+        <span className="text-[10px] text-fuchsia-600/40 tracking-[0.2em] font-serif select-none">REWRITER</span>
+        <div className="w-6 h-0.5 bg-fuchsia-500/30 rounded mt-1" />
       </div>
     );
   }
@@ -153,14 +153,14 @@ export const GameCard: React.FC<GameCardProps> = ({
         disabled ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer hover:-translate-y-2'
       } ${
         selected
-          ? 'ring-4 ring-amber-500 scale-105 z-10 border-amber-400 shadow-[0_0_25px_rgba(245,158,11,0.5)] bg-[#1c1917]'
+          ? 'ring-4 ring-fuchsia-500 scale-105 z-10 border-fuchsia-400 shadow-[0_0_25px_rgba(236,72,153,0.5)] bg-[#1c1917]'
           : `border border-zinc-800/80 ${colorTheme.bg} ${colorTheme.glow}`
       }`}
     >
       {/* Background Cyber Cow holographic design embedded directly into the card body */}
       <svg
         viewBox="0 0 100 100"
-        className="absolute inset-0 w-full h-full text-zinc-500/5 group-hover:text-amber-500/10 transition-colors duration-500 pointer-events-none"
+        className="absolute inset-0 w-full h-full text-zinc-500/5 group-hover:text-fuchsia-500/10 transition-colors duration-500 pointer-events-none"
       >
         {/* Detailed cyber Cow Horns engraving */}
         <path d="M 30 35 Q 5 15 10 -10 Q 25 20 38 35" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -188,7 +188,7 @@ export const GameCard: React.FC<GameCardProps> = ({
         {/* Skill modification popover (+3 offset or reverse indicators) */}
         {offsetIndicator !== 0 && (
           <span className={`text-[10px] px-1.5 py-0.5 rounded-md font-mono font-bold leading-none animate-bounce ${
-            offsetIndicator > 0 ? 'bg-amber-600 text-white' : 'bg-emerald-600 text-white'
+            offsetIndicator > 0 ? 'bg-fuchsia-600 text-white' : 'bg-emerald-600 text-white'
           }`}>
             {offsetIndicator > 0 ? `+${offsetIndicator}` : offsetIndicator}
           </span>
@@ -215,7 +215,7 @@ export const GameCard: React.FC<GameCardProps> = ({
       </div>
 
       {/* Bottom corner technical detail watermark */}
-      <span className="absolute bottom-1.5 right-2 text-[8px] text-zinc-600/35 group-hover:text-amber-500/50 transition-colors duration-300 select-none font-mono">
+      <span className="absolute bottom-1.5 right-2 text-[8px] text-zinc-600/35 group-hover:text-fuchsia-500/50 transition-colors duration-300 select-none font-mono">
         BULL.{value}
       </span>
     </button>

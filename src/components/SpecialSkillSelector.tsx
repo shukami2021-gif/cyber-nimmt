@@ -81,12 +81,12 @@ export const SpecialSkillSelector: React.FC<SpecialSkillSelectorProps> = ({
       className="bg-zinc-950/40 border border-zinc-800/70 rounded-2xl p-4 md:p-5 shadow-[0_8px_32px_rgba(0,0,0,0.6)] backdrop-blur-lg relative overflow-hidden"
     >
       {/* Visual cyber mesh background */}
-      <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-amber-950/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-fuchsia-950/5 to-transparent pointer-events-none" />
 
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-4 border-b border-zinc-800/80 pb-3">
         <div>
-          <h3 className="text-sm font-bold text-amber-500 tracking-wider flex items-center gap-2 font-serif uppercase">
-            <span className="inline-block w-2 h-2 bg-amber-500 rounded-sm animate-pulse" />
+          <h3 className="text-sm font-bold text-fuchsia-500 tracking-wider flex items-center gap-2 font-serif uppercase">
+            <span className="inline-block w-2 h-2 bg-fuchsia-500 rounded-sm animate-pulse" />
             HACK TERMINAL // 拡張マトリクス・プログラム
           </h3>
           <p className="text-[10px] text-zinc-400 mt-1 font-sans">
@@ -103,12 +103,12 @@ export const SpecialSkillSelector: React.FC<SpecialSkillSelectorProps> = ({
                 key={idx}
                 className={`w-3 h-4 transform skew-x-12 transition-all duration-300 rounded-sm ${
                   idx < player.energy
-                    ? 'bg-gradient-to-t from-amber-600 to-amber-300 shadow-[0_0_10px_rgba(245,158,11,0.55)]'
+                    ? 'bg-gradient-to-t from-fuchsia-600 to-fuchsia-300 shadow-[0_0_10px_rgba(236,72,153,0.55)]'
                     : 'bg-zinc-850 border border-zinc-800'
                 }`}
               />
             ))}
-            <span className="text-amber-500 font-bold text-sm ml-1.5 font-mono">{player.energy} EP</span>
+            <span className="text-fuchsia-500 font-bold text-sm ml-1.5 font-mono">{player.energy} EP</span>
           </div>
         </div>
       </div>
@@ -125,7 +125,7 @@ export const SpecialSkillSelector: React.FC<SpecialSkillSelectorProps> = ({
               key={skill.id}
               className={`flex flex-col justify-between p-3.5 rounded-xl border transition-all duration-300 ${
                 isSelected
-                  ? 'bg-amber-950/20 border-amber-500/40 shadow-[0_0_15px_rgba(180,83,9,0.15)]'
+                  ? 'bg-fuchsia-950/20 border-fuchsia-500/40 shadow-[0_0_15px_rgba(236,72,153,0.15)]'
                   : meetsCost
                   ? 'bg-zinc-900/45 border-zinc-805 hover:border-zinc-705 hover:bg-zinc-900'
                   : 'bg-zinc-950/30 border-zinc-900 opacity-60'
@@ -133,23 +133,23 @@ export const SpecialSkillSelector: React.FC<SpecialSkillSelectorProps> = ({
             >
               <div>
                 <div className="flex items-center justify-between gap-1 mb-2">
-                  <span className={`text-[9px] font-mono uppercase font-bold tracking-wider ${isSelected ? 'text-amber-400' : 'text-zinc-500'}`}>
+                  <span className={`text-[9px] font-mono uppercase font-bold tracking-wider ${isSelected ? 'text-fuchsia-400' : 'text-zinc-500'}`}>
                     {skill.name}
                   </span>
                   
                   {/* Energy cost pill */}
                   <span className={`text-[8.5px] px-1.5 py-0.5 rounded font-mono font-black ${
                     isSelected 
-                      ? 'bg-amber-500 text-black' 
+                      ? 'bg-fuchsia-500 text-black' 
                       : meetsCost 
-                      ? 'bg-zinc-800 text-amber-500' 
+                      ? 'bg-zinc-800 text-fuchsia-500' 
                       : 'bg-zinc-950 text-zinc-600'
                   }`}>
                     {skill.cost} EP
                   </span>
                 </div>
 
-                <h4 className={`text-xs font-bold ${isSelected ? 'text-amber-400' : 'text-zinc-200'} mb-1.5 font-display`}>
+                <h4 className={`text-xs font-bold ${isSelected ? 'text-fuchsia-400' : 'text-zinc-200'} mb-1.5 font-display`}>
                   {skill.jpName}
                 </h4>
                 
@@ -160,9 +160,9 @@ export const SpecialSkillSelector: React.FC<SpecialSkillSelectorProps> = ({
 
               {/* Sub-controller panel for VALUE_OFFSET configuration */}
               {skill.id === 'VALUE_OFFSET' && isSelected && (
-                <div className="bg-zinc-950/60 border border-amber-500/20 rounded-lg p-2 mb-3">
+                <div className="bg-zinc-950/60 border border-fuchsia-500/20 rounded-lg p-2 mb-3">
                   <div className="flex justify-between items-center mb-1.5">
-                    <span className="text-[8.5px] text-amber-500/90 font-mono font-bold">REWRITE RANGE:</span>
+                    <span className="text-[8.5px] text-fuchsia-500/90 font-mono font-bold">REWRITE RANGE:</span>
                     <span className={`text-xs font-black font-mono ${offsetValue === 0 ? 'text-zinc-400' : offsetValue > 0 ? 'text-orange-400' : 'text-emerald-400'}`}>
                       {offsetValue > 0 ? `+${offsetValue}` : offsetValue}
                     </span>
@@ -199,9 +199,9 @@ export const SpecialSkillSelector: React.FC<SpecialSkillSelectorProps> = ({
                 disabled={btnDisabled}
                 className={`w-full py-1 rounded-lg text-[9px] font-mono font-bold tracking-widest uppercase transition-all duration-300 cursor-pointer ${
                   isSelected
-                    ? 'bg-amber-600 hover:bg-amber-500 text-black shadow-[0_0_12px_rgba(245,158,11,0.45)]'
+                    ? 'bg-fuchsia-600 hover:bg-fuchsia-500 text-black shadow-[0_0_12px_rgba(236,72,153,0.45)]'
                     : meetsCost
-                    ? 'bg-zinc-800 hover:bg-amber-655 hover:text-amber-100 text-zinc-300 border border-zinc-700/60'
+                    ? 'bg-zinc-800 hover:bg-fuchsia-655 hover:text-fuchsia-100 text-zinc-300 border border-zinc-700/60'
                     : 'bg-zinc-950 text-zinc-600 border border-zinc-900 cursor-not-allowed'
                 }`}
               >

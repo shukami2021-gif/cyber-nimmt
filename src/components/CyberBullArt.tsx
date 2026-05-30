@@ -15,7 +15,7 @@ export const CyberBullArt: React.FC<CyberBullArtProps> = ({ className = "w-full 
   const imageUrl = "/src/assets/images/cyber_bull_art_1779462912207.png";
 
   return (
-    <div className={`relative flex items-center justify-center overflow-hidden rounded-xl bg-zinc-950/40 border border-cyan-500/20 ${glow ? 'shadow-[0_0_15px_rgba(6,182,212,0.15)] hover:shadow-[0_0_25px_rgba(236,72,153,0.25)] transition-all duration-500' : ''} ${className}`}>
+    <div className={`relative flex items-center justify-center overflow-hidden rounded-xl bg-zinc-950/40 border border-fuchsia-500/20 ${glow ? 'shadow-[0_0_15px_rgba(219,39,119,0.15)] hover:shadow-[0_0_25px_rgba(236,72,153,0.25)] transition-all duration-500' : ''} ${className}`}>
       {/* Background Matrix/Grid Line Art */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_4px,3px_100%] opacity-40 pointer-events-none" />
 
@@ -38,11 +38,11 @@ export const CyberBullArt: React.FC<CyberBullArtProps> = ({ className = "w-full 
           key="fallback-bull-svg"
           id="fallback-bull-svg"
           viewBox="0 0 200 200"
-          className="w-4/5 h-4/5 text-cyan-400 select-none pointer-events-none"
+          className="w-4/5 h-4/5 text-fuchsia-400 select-none pointer-events-none"
         >
           <defs>
             <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#06b6d4" />
+              <stop offset="0%" stopColor="#ec4899" />
               <stop offset="50%" stopColor="#d946ef" />
               <stop offset="100%" stopColor="#f43f5e" />
             </linearGradient>
@@ -85,12 +85,12 @@ export const CyberBullArt: React.FC<CyberBullArtProps> = ({ className = "w-full 
           </g>
 
           {/* Ambient grid background detail */}
-          <circle cx="100" cy="100" r="85" stroke="#06b6d4" strokeWidth="0.5" strokeDasharray="5,10" className="opacity-30" />
+          <circle cx="100" cy="100" r="85" stroke="#ec4899" strokeWidth="0.5" strokeDasharray="5,10" className="opacity-30" />
         </svg>
       )}
 
       {/* Futuristic Scanner Scanline beam */}
-      <div className="absolute left-0 w-full h-[2px] bg-cyan-500/50 shadow-[0_0_8px_#06b6d4] animate-[bounce_3s_infinite_ease-in-out] pointer-events-none opacity-60" />
+      <div className="absolute left-0 w-full h-[2px] bg-fuchsia-500/50 shadow-[0_0_8px_#ec4899] animate-[bounce_3s_infinite_ease-in-out] pointer-events-none opacity-60" />
     </div>
   );
 };

@@ -70,7 +70,7 @@ export const CutInEffect: React.FC<CutInEffectProps> = ({
     const dx = Math.cos(angle) * speed;
     const dy = Math.sin(angle) * speed;
     const duration = 0.5 + Math.random() * 1.5;
-    const colors = ['bg-rose-500', 'bg-cyan-400', 'bg-fuchsia-500', 'bg-purple-500', 'bg-yellow-400'];
+    const colors = ['bg-rose-500', 'bg-fuchsia-500', 'bg-pink-500', 'bg-purple-500', 'bg-fuchsia-400'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
     return {
@@ -99,8 +99,8 @@ export const CutInEffect: React.FC<CutInEffectProps> = ({
       <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.6)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_8px,6px_100%] opacity-60 pointer-events-none" />
 
       {/* Cyber Technical Grid Border */}
-      <div className="absolute inset-10 border border-cyan-500/10 pointer-events-none flex flex-col justify-between p-4">
-        <div className="flex justify-between text-[10px] text-cyan-400/40 select-none">
+      <div className="absolute inset-10 border border-fuchsia-500/10 pointer-events-none flex flex-col justify-between p-4">
+        <div className="flex justify-between text-[10px] text-fuchsia-400/40 select-none">
           <span>SECURE_LINK // ID: {Math.random().toString(36).substring(4, 10).toUpperCase()}</span>
           <span>NIMT_CRITICAL_HAZARD</span>
         </div>
@@ -112,7 +112,7 @@ export const CutInEffect: React.FC<CutInEffectProps> = ({
 
       {/* Left Tech Gate Block */}
       <div
-        className={`absolute left-0 top-0 bottom-0 w-1/2 bg-zinc-950 border-r-2 border-cyan-500/40 flex items-center justify-end pr-10 transition-transform duration-500 ease-out z-10 ${
+        className={`absolute left-0 top-0 bottom-0 w-1/2 bg-zinc-950 border-r-2 border-fuchsia-500/40 flex items-center justify-end pr-10 transition-transform duration-500 ease-out z-10 ${
           phase === 'gate' || phase === 'warning' || phase === 'blast'
             ? 'translate-x-0'
             : phase === 'fadeout'
@@ -125,7 +125,7 @@ export const CutInEffect: React.FC<CutInEffectProps> = ({
 
       {/* Right Tech Gate Block */}
       <div
-        className={`absolute right-0 top-0 bottom-0 w-1/2 bg-zinc-950 border-l-2 border-cyan-500/40 flex items-center justify-start pl-10 transition-transform duration-500 ease-out z-10 ${
+        className={`absolute right-0 top-0 bottom-0 w-1/2 bg-zinc-950 border-l-2 border-fuchsia-500/40 flex items-center justify-start pl-10 transition-transform duration-500 ease-out z-10 ${
           phase === 'gate' || phase === 'warning' || phase === 'blast'
             ? 'translate-x-0'
             : phase === 'fadeout'
@@ -138,7 +138,7 @@ export const CutInEffect: React.FC<CutInEffectProps> = ({
 
       {/* Warning Chevron Band Across the screen */}
       <div
-        className={`absolute inset-x-0 h-44 bg-gradient-to-r from-red-600 via-fuchsia-700 to-red-600 border-y-4 border-yellow-400 shadow-[0_0_30px_rgba(239,68,68,0.5)] flex flex-col justify-center transform -skew-y-3 transition-all duration-500 z-20 ${
+        className={`absolute inset-x-0 h-44 bg-gradient-to-r from-fuchsia-600 via-pink-600 to-fuchsia-700 border-y-4 border-fuchsia-400 shadow-[0_0_30px_rgba(236,72,153,0.5)] flex flex-col justify-center transform -skew-y-3 transition-all duration-500 z-20 ${
           phase === 'warning' || phase === 'blast'
             ? 'scale-100 opacity-100'
             : 'scale-0 opacity-0'
@@ -180,7 +180,7 @@ export const CutInEffect: React.FC<CutInEffectProps> = ({
           {/* Left Block: Cybermatic Bull graphic display */}
           <div className="w-56 h-56 flex-shrink-0 animate-[ping_1.5s_infinite_ease-in-out] relative">
             {/* Double overlay shadow */}
-            <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400 to-fuchsia-500 rounded-xl blur opacity-30 animate-pulse" />
+            <div className="absolute -inset-2 bg-gradient-to-r from-fuchsia-400 to-pink-500 rounded-xl blur opacity-30 animate-pulse" />
             <CyberBullArt className="w-full h-full border-4 border-fuchsia-500 shadow-[0_0_40px_rgba(219,39,119,0.7)]" glow={true} />
           </div>
 
@@ -194,7 +194,7 @@ export const CutInEffect: React.FC<CutInEffectProps> = ({
 
             <div>
               <span className="text-xs text-rose-400/70 font-semibold tracking-wider">INITIATOR</span>
-              <h2 className="text-2xl font-black text-cyan-400 drop-shadow-[0_0_8px_rgba(6,182,212,0.4)] uppercase">
+              <h2 className="text-2xl font-black text-fuchsia-300 drop-shadow-[0_0_8px_rgba(236,72,153,0.4)] uppercase">
                 {triggerPlayerName}
               </h2>
             </div>

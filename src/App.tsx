@@ -92,7 +92,7 @@ export default function App() {
       energy: 3, // Start with 3 EP to try features out immediately
       activeSkill: null,
       selectedCard: null,
-      avatarColor: 'from-cyan-500 to-blue-600 shadow-[0_0_12px_#06b6d4]',
+      avatarColor: 'from-fuchsia-500 to-blue-600 shadow-[0_0_12px_#ec4899]',
       archetype: selectArchetype(userArchetypeId),
     };
 
@@ -672,20 +672,20 @@ export default function App() {
   const humanPlayer = gameState.players.find((p) => p.isHuman);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-zinc-100 p-2 md:p-6 font-sans selection:bg-amber-500/20 selection:text-amber-200 transition-colors duration-500 relative">
+    <div className="min-h-screen bg-[#120214] text-zinc-100 p-2 md:p-6 font-sans selection:bg-fuchsia-500/20 selection:text-fuchsia-200 transition-colors duration-500 relative">
       
-      {/* Delicate background decorative grid and radiant gold core */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-950/10 via-transparent to-transparent pointer-events-none z-0" />
+      {/* Delicate background decorative grid and radiant pink core */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-fuchsia-950/10 via-transparent to-transparent pointer-events-none z-0" />
 
       {/* Top Header Controls bar */}
       <header className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between border-b border-zinc-800/80 pb-4 mb-6 gap-4 relative z-10">
         <div className="flex items-center gap-3">
           {/* Logo element with spinning glowing icon */}
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 to-amber-900 border border-amber-500/35 flex items-center justify-center shadow-[0_0_15px_rgba(245,158,11,0.25)] animate-delicate-glow">
-            <Swords className="w-5 h-5 text-amber-200" />
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-fuchsia-500 to-pink-800 border border-fuchsia-400/35 flex items-center justify-center shadow-[0_0_15px_rgba(236,72,153,0.25)] animate-delicate-glow">
+            <Swords className="w-5 h-5 text-fuchsia-200" />
           </div>
           <div>
-            <h1 className="text-lg md:text-2xl font-black tracking-[0.1em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-zinc-100 to-amber-500 font-serif uppercase leading-none">
+            <h1 className="text-lg md:text-2xl font-black tracking-[0.1em] text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-200 via-zinc-100 to-fuchsia-500 font-serif uppercase leading-none">
               Nimmt Board Game
             </h1>
             <p className="text-[9px] text-zinc-500 uppercase tracking-widest leading-none mt-1 font-mono">
@@ -700,9 +700,9 @@ export default function App() {
           <button
             onClick={() => setShowHowTo(!showHowTo)}
             id="how-to-btn"
-            className="flex items-center gap-1.5 bg-zinc-900/60 border border-zinc-800/80 hover:border-amber-500/40 hover:bg-zinc-800 px-3 py-1.5 rounded-lg text-xs font-semibold text-zinc-300 transition-all cursor-pointer"
+            className="flex items-center gap-1.5 bg-zinc-900/60 border border-zinc-800/80 hover:border-fuchsia-500/40 hover:bg-zinc-800 px-3 py-1.5 rounded-lg text-xs font-semibold text-zinc-300 transition-all cursor-pointer"
           >
-            <HelpCircle className="w-4 h-4 text-amber-500" />
+            <HelpCircle className="w-4 h-4 text-fuchsia-500" />
             ルール説明
           </button>
 
@@ -710,7 +710,7 @@ export default function App() {
           <button
             id="mute-toggle-btn"
             onClick={handleToggleSound}
-            className="flex items-center gap-1.5 bg-zinc-900/60 border border-zinc-800/80 hover:border-amber-500/40 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer text-zinc-300"
+            className="flex items-center gap-1.5 bg-zinc-900/60 border border-zinc-800/80 hover:border-fuchsia-500/40 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer text-zinc-300"
           >
             {isPlayingSound ? <Volume2 className="w-4 h-4 text-emerald-500" /> : <VolumeX className="w-4 h-4 text-rose-500" />}
             {isPlayingSound ? 'SOUND ON' : 'SOUND MUTED'}
@@ -721,7 +721,7 @@ export default function App() {
             <button
               id="restart-game-btn"
               onClick={handleResetGame}
-              className="flex items-center gap-1 bg-rose-950/15 border border-rose-500/20 hover:bg-rose-900/40 hover:border-rose-500/50 px-3 py-1.5 rounded-lg text-xs font-bold text-rose-300 transition-all cursor-pointer"
+              className="flex items-center gap-1 bg-fuchsia-950/15 border border-fuchsia-500/20 hover:bg-fuchsia-900/40 hover:border-fuchsia-500/50 px-3 py-1.5 rounded-lg text-xs font-bold text-fuchsia-300 transition-all cursor-pointer"
             >
               <RotateCcw className="w-4 h-4" />
               システム再起動
@@ -738,15 +738,15 @@ export default function App() {
           
           {/* Rule tutorial visual overlay popover */}
           {showHowTo && (
-            <div id="how-to-tutorial-card" className="bg-gradient-to-br from-zinc-905 via-zinc-950 to-black border border-amber-500/35 rounded-2xl p-5 md:p-6 shadow-[0_12px_48px_rgba(0,0,0,0.85)] relative z-20">
+            <div id="how-to-tutorial-card" className="bg-gradient-to-br from-zinc-905 via-zinc-950 to-black border border-fuchsia-500/35 rounded-2xl p-5 md:p-6 shadow-[0_12px_48px_rgba(0,0,0,0.85)] relative z-20">
               <button
                 onClick={() => setShowHowTo(false)}
                 className="absolute top-4 right-4 text-zinc-400 hover:text-white text-lg font-bold cursor-pointer"
               >
                 ✕
               </button>
-              <h2 className="text-base md:text-lg font-black text-amber-500 mb-3 flex items-center gap-2 font-serif uppercase tracking-wide">
-                <GraduationCap className="w-5 h-5 text-amber-500" />
+              <h2 className="text-base md:text-lg font-black text-fuchsia-500 mb-3 flex items-center gap-2 font-serif uppercase tracking-wide">
+                <GraduationCap className="w-5 h-5 text-fuchsia-500" />
                 サイバー・ニムトの基本ルールと革新システム
               </h2>
               <div className="space-y-3.5 text-xs text-zinc-300 leading-relaxed font-sans">
@@ -755,15 +755,15 @@ export default function App() {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-2 font-mono">
                   <div className="bg-zinc-950/80 p-3 rounded-xl border border-zinc-900 text-zinc-400">
-                    <span className="text-amber-500 font-bold block mb-1 font-serif">■ ニムトの根本ルール</span>
+                    <span className="text-fuchsia-500 font-bold block mb-1 font-serif">■ ニムトの根本ルール</span>
                     1. 全員が一度に手札から1枚選んで同時に提出。<br />
                     2. 値の小さいカードから順番に配置。<br />
                     3. カードは「末尾の数値が最も近く、かつ大きい列」の末尾に吸い込まれます。<br />
                     4. 列の「6枚目」を置いてしまうと、それまでの5枚を食べることになりペナルティ（マイナス点）となります！
                   </div>
-                  <div className="bg-zinc-950/80 p-3 rounded-xl border border-amber-500/10 text-zinc-400">
-                    <span className="text-amber-400 font-bold block mb-1 font-serif">■ 本作独自の斬新な要素</span>
-                    1. <b className="text-amber-300">サイバースキル EP</b>: 各自チャージされるEPを消費し、数値の変更・強行割り込み・EMPバリア・トラップ配置・マイナス相手転嫁がいつでも起動可能。<br />
+                  <div className="bg-zinc-950/80 p-3 rounded-xl border border-fuchsia-500/10 text-zinc-400">
+                    <span className="text-fuchsia-400 font-bold block mb-1 font-serif">■ 本作独自の斬新な要素</span>
+                    1. <b className="text-fuchsia-300">サイバースキル EP</b>: 各自チャージされるEPを消費し、数値の変更・強行割り込み・EMPバリア・トラップ配置・マイナス相手転嫁がいつでも起動可能。<br />
                     2. <b className="text-rose-400">大ダメージ・カットイン</b>: 対戦相手に6点以上の連続マイナスかトラップを踏み倒させたとき、画面をハックするかっこいいカットインが炸裂！
                   </div>
                 </div>
@@ -774,18 +774,18 @@ export default function App() {
           {/* TITLE SCREEN (SETUP PHASE) */}
           {gameState.currentPhase === 'SETUP' && (
             <div id="cyber-title-screen" className="bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800/80 rounded-3xl p-8 md:p-12 text-center space-y-8 relative overflow-hidden shadow-[0_16px_50px_rgba(0,0,0,0.9)] animate-delicate-glow">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-600 via-amber-400 to-amber-700" />
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-fuchsia-500 via-fuchsia-300 to-pink-600" />
               
               <div className="max-w-xl mx-auto space-y-4">
-                <span className="text-[10px] bg-amber-950/60 text-amber-500 border border-amber-500/30 px-3 py-1 rounded-full font-mono font-bold tracking-widest uppercase inline-block font-sans">
+                <span className="text-[10px] bg-fuchsia-950/60 text-fuchsia-500 border border-fuchsia-500/30 px-3 py-1 rounded-full font-mono font-bold tracking-widest uppercase inline-block font-sans">
                   SECURE NET PROTOCOL // VER 2.0.4
                 </span>
                 
-                <h1 className="text-5xl md:text-6xl font-black font-sans text-transparent bg-clip-text bg-gradient-to-br from-amber-100 via-zinc-200 to-zinc-500 tracking-wider uppercase leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
+                <h1 className="text-5xl md:text-6xl font-black font-sans text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-100 via-zinc-200 to-zinc-500 tracking-wider uppercase leading-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
                   サイバーニムト
                 </h1>
                 
-                <h2 className="text-sm font-bold text-amber-500 uppercase tracking-[0.25em] font-display">
+                <h2 className="text-sm font-bold text-fuchsia-500 uppercase tracking-[0.25em] font-display">
                   電脳ニムト：ネクサス・ドライブ
                 </h2>
                 
@@ -796,10 +796,10 @@ export default function App() {
 
               {/* Glowing Cyber Bull Mascot Image block inside the title screen */}
               <div className="flex flex-col items-center justify-center py-4 relative">
-                <div className="absolute inset-0 bg-amber-500/5 blur-3xl rounded-full max-w-xs mx-auto -z-10" />
+                <div className="absolute inset-0 bg-fuchsia-500/5 blur-3xl rounded-full max-w-xs mx-auto -z-10" />
                 <div className="w-40 h-40 transform transition-all duration-500 hover:scale-[1.05] hover:rotate-2 relative">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-amber-500/20 to-fuchsia-500/10 rounded-3xl blur-xl" />
-                  <CyberBullArt glow={true} className="border-2 border-amber-500/20 shadow-2xl rounded-2xl" />
+                  <div className="absolute -inset-2 bg-gradient-to-r from-fuchsia-500/20 to-fuchsia-500/10 rounded-3xl blur-xl" />
+                  <CyberBullArt glow={true} className="border-2 border-fuchsia-500/20 shadow-2xl rounded-2xl" />
                 </div>
                 <span className="text-[9px] text-zinc-650 tracking-widest font-mono mt-3">
                   CYBER_COW_INTEGRITY_CORE_V1.DLL
@@ -809,13 +809,13 @@ export default function App() {
               {/* Game highlight cards display */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-3xl mx-auto text-left font-sans">
                 <div className="bg-zinc-950/50 border border-zinc-850 p-4 rounded-xl space-y-1.5 animate-pulse">
-                  <span className="text-amber-500 font-bold text-xs uppercase font-display block">1. アビリティ・ハック</span>
+                  <span className="text-fuchsia-500 font-bold text-xs uppercase font-display block">1. アビリティ・ハック</span>
                   <p className="text-[10px] text-zinc-400 leading-normal">
                     毎ターン EP がチャージ。数値の書き換え、割り込み配置、ペナルティ反転などの特権アビリティを起動可能。
                   </p>
                 </div>
                 <div className="bg-zinc-950/50 border border-zinc-850 p-4 rounded-xl space-y-1.5">
-                  <span className="text-cyan-400 font-bold text-xs uppercase font-display block">2. 大ダメージ・カットイン</span>
+                  <span className="text-fuchsia-400 font-bold text-xs uppercase font-display block">2. 大ダメージ・カットイン</span>
                   <p className="text-[10px] text-zinc-400 leading-normal">
                     相手に 6点以上のマイナスを与える、またはトラップを踏ませたとき、電脳視界を揺るがす「ド派手カットイン」が炸裂！
                   </p>
@@ -835,7 +835,7 @@ export default function App() {
                     audio.playWarningSiren();
                     setGameState((prev) => ({ ...prev, currentPhase: 'CHAR_SELECT' }));
                   }}
-                  className="w-full bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 hover:brightness-110 text-zinc-950 py-4 px-8 rounded-xl font-black tracking-[0.2em] text-sm shadow-[0_6px_24px_rgba(245,158,11,0.35)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer uppercase flex items-center justify-center gap-2 font-serif"
+                  className="w-full bg-gradient-to-r from-fuchsia-600 via-fuchsia-500 to-fuchsia-700 hover:brightness-110 text-zinc-950 py-4 px-8 rounded-xl font-black tracking-[0.2em] text-sm shadow-[0_6px_24px_rgba(236,72,153,0.35)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer uppercase flex items-center justify-center gap-2 font-serif"
                 >
                   <Swords className="w-5 h-5 animate-pulse" />
                   INITIALIZE SYSTEM // 電脳ゲーム起動
@@ -857,13 +857,13 @@ export default function App() {
           {/* CHARACTER SELECTOR / LOBBY SCREEN */}
           {gameState.currentPhase === 'CHAR_SELECT' && (
             <div id="character-select-lobby" className="bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800/80 rounded-3xl p-6 md:p-10 text-center space-y-8 relative overflow-hidden shadow-[0_16px_48px_rgba(0,0,0,0.85)] animate-delicate-glow">
-              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-600 via-amber-300 to-amber-700" />
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-fuchsia-600 via-fuchsia-300 to-fuchsia-700" />
               
               <div className="max-w-2xl mx-auto space-y-3">
-                <span className="text-[9px] bg-amber-955/60 text-amber-550 border border-amber-500/30 px-3 py-1 rounded-full font-mono font-bold tracking-widest uppercase">
+                <span className="text-[9px] bg-fuchsia-955/60 text-fuchsia-550 border border-fuchsia-500/30 px-3 py-1 rounded-full font-mono font-bold tracking-widest uppercase">
                   READY FOR DECK IMMERSION // ロビー
                 </span>
-                <h2 className="text-3xl font-black font-serif text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-zinc-100 to-zinc-400 uppercase tracking-wide">
+                <h2 className="text-3xl font-black font-serif text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-100 via-zinc-100 to-zinc-400 uppercase tracking-wide">
                   得意な電脳プログラムを選択
                 </h2>
                 <p className="text-xs text-zinc-400 leading-normal max-w-lg mx-auto font-sans">
@@ -876,13 +876,13 @@ export default function App() {
                 {SKILL_LIST.slice(0, 3).map((sk) => (
                   <div
                     key={sk.id}
-                    className="bg-zinc-950/40 border border-zinc-800 hover:border-amber-500/30 p-5 rounded-2xl flex flex-col justify-between text-left transition-all duration-300 group hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] relative"
+                    className="bg-zinc-950/40 border border-zinc-800 hover:border-fuchsia-500/30 p-5 rounded-2xl flex flex-col justify-between text-left transition-all duration-300 group hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] relative"
                   >
                     <div>
-                      <span className="text-[9px] bg-zinc-900 text-amber-500 border border-zinc-850 px-2 py-0.5 rounded uppercase font-bold tracking-wider mb-2 inline-block font-mono">
+                      <span className="text-[9px] bg-zinc-900 text-fuchsia-500 border border-zinc-850 px-2 py-0.5 rounded uppercase font-bold tracking-wider mb-2 inline-block font-mono">
                         ARCHETYPE
                       </span>
-                      <h3 className="text-base font-bold text-white group-hover:text-amber-400 transition-colors font-serif">
+                      <h3 className="text-base font-bold text-white group-hover:text-fuchsia-400 transition-colors font-serif">
                         {sk.name}
                       </h3>
                       <p className="text-[10px] text-zinc-400 mt-2 leading-relaxed font-sans">
@@ -892,7 +892,7 @@ export default function App() {
                     
                     <button
                       onClick={() => handleStartGame(sk.id)}
-                      className="mt-6 w-full bg-amber-955/30 hover:bg-amber-500 hover:text-black border border-amber-500/20 text-amber-500 text-xs py-2 rounded-lg font-bold transition-all cursor-pointer font-sans"
+                      className="mt-6 w-full bg-fuchsia-955/30 hover:bg-fuchsia-500 hover:text-black border border-fuchsia-500/20 text-fuchsia-500 text-xs py-2 rounded-lg font-bold transition-all cursor-pointer font-sans"
                     >
                       この能力として出撃
                     </button>
@@ -903,7 +903,7 @@ export default function App() {
               <div className="pt-4 border-t border-zinc-800/80 max-w-sm mx-auto flex items-center justify-center gap-3">
                 <button
                   onClick={() => handleStartGame('VALUE_OFFSET')}
-                  className="w-full bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 hover:brightness-110 text-zinc-950 py-3 px-6 rounded-xl font-black tracking-widest text-sm shadow-[0_4px_15px_rgba(245,158,11,0.35)] transition-all cursor-pointer uppercase flex items-center justify-center gap-2 font-serif"
+                  className="w-full bg-gradient-to-r from-fuchsia-600 via-fuchsia-500 to-fuchsia-700 hover:brightness-110 text-zinc-950 py-3 px-6 rounded-xl font-black tracking-widest text-sm shadow-[0_4px_15px_rgba(236,72,153,0.35)] transition-all cursor-pointer uppercase flex items-center justify-center gap-2 font-serif"
                 >
                   <Play className="w-4 h-4 fill-zinc-950" />
                   クイックマッチ開始
@@ -932,17 +932,17 @@ export default function App() {
               >
                 {/* Sector header watermark */}
                 <div className="absolute top-3 right-6 flex items-center gap-1 opacity-20 pointer-events-none text-[9px] font-mono">
-                  <Flame className="w-3 h-3 text-amber-500" />
+                  <Flame className="w-3 h-3 text-fuchsia-500" />
                   <span>CYBER_BOARD_COORDINATE // CENTRAL MATRIX</span>
                 </div>
 
                 <div className="flex justify-between items-center mb-4 pb-2 border-b border-zinc-800/80">
-                  <span className="text-xs font-bold text-amber-500 uppercase tracking-widest font-serif">
+                  <span className="text-xs font-bold text-fuchsia-500 uppercase tracking-widest font-serif">
                     ボード中央グリッド (4ライン)
                   </span>
                   
                   {/* Info tracker slots */}
-                  <span className="text-[10px] font-bold text-amber-400 bg-amber-950/30 border border-amber-800/60 px-2.5 py-0.5 rounded-full leading-none font-mono">
+                  <span className="text-[10px] font-bold text-fuchsia-400 bg-fuchsia-950/30 border border-fuchsia-800/60 px-2.5 py-0.5 rounded-full leading-none font-mono">
                     ROUND: {gameState.round} / 10
                   </span>
                 </div>
@@ -959,7 +959,7 @@ export default function App() {
                         key={row.id}
                         className={`group rounded-2xl p-3.5 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4 transition-all duration-300 relative ${
                           isRowTargetForChoice
-                            ? 'bg-amber-950/20 border border-amber-500/85 shadow-[0_0_20px_rgba(245,158,11,0.25)] hover:bg-amber-950/35 cursor-pointer scale-[1.01]'
+                            ? 'bg-fuchsia-950/20 border border-fuchsia-500/85 shadow-[0_0_20px_rgba(236,72,153,0.25)] hover:bg-fuchsia-950/35 cursor-pointer scale-[1.01]'
                             : isFull
                             ? 'bg-gradient-to-r from-rose-950/15 via-zinc-900/60 to-zinc-950 border border-rose-900/30 shadow-[0_0_12px_rgba(153,27,27,0.2)]'
                             : 'bg-zinc-900/30 border border-zinc-900/80 hover:bg-zinc-900/50'
@@ -972,7 +972,7 @@ export default function App() {
                       >
                         {/* Bullet trap indicators overlay */}
                         {row.hasTrap && (
-                          <div className="absolute top-1.5 right-4 bg-amber-500/20 border border-amber-500/30 rounded px-1.5 py-0.5 text-[8px] text-amber-400 uppercase tracking-wider animate-pulse flex items-center gap-1 z-10 font-mono">
+                          <div className="absolute top-1.5 right-4 bg-fuchsia-500/20 border border-fuchsia-500/30 rounded px-1.5 py-0.5 text-[8px] text-fuchsia-400 uppercase tracking-wider animate-pulse flex items-center gap-1 z-10 font-mono">
                             ★ TRAP PLANTED ({row.trapPlacedBy === 'player' ? 'Player' : 'CPU'})
                           </div>
                         )}
@@ -982,7 +982,7 @@ export default function App() {
                           <span className={`text-xs font-bold font-mono py-1 px-2.5 rounded-lg border leading-none ${
                             isFull
                               ? 'bg-rose-950/40 text-rose-400 border-rose-900/50'
-                              : 'bg-zinc-950 text-amber-500 border-zinc-850'
+                              : 'bg-zinc-950 text-fuchsia-500 border-zinc-850'
                           }`}>
                             L-{row.id}
                           </span>
@@ -1015,7 +1015,7 @@ export default function App() {
                                 isFull
                                   ? 'border-rose-950/20'
                                   : emptyIndex === 4 - row.cards.length
-                                  ? 'border-amber-500/20 text-amber-500/20 font-bold bg-amber-500/5 hover:border-amber-500/30'
+                                  ? 'border-fuchsia-500/20 text-fuchsia-500/20 font-bold bg-fuchsia-500/5 hover:border-fuchsia-500/30'
                                   : 'border-zinc-850 text-zinc-700/30 bg-zinc-950/10'
                                 }`}
                             >
@@ -1028,7 +1028,7 @@ export default function App() {
                         {isRowTargetForChoice && (
                           <button
                             onClick={() => handleSelectRowReset(idx)}
-                            className="bg-amber-600 hover:bg-amber-500 text-black text-[10px] font-mono font-bold py-1.5 px-3 rounded-lg shadow-[0_0_10px_rgba(245,158,11,0.3)] leading-none cursor-pointer"
+                            className="bg-fuchsia-600 hover:bg-fuchsia-500 text-black text-[10px] font-mono font-bold py-1.5 px-3 rounded-lg shadow-[0_0_10px_rgba(236,72,153,0.3)] leading-none cursor-pointer"
                           >
                             SELECT DUMP
                           </button>
@@ -1040,8 +1040,8 @@ export default function App() {
 
                 {/* Overwrite instruction warning */}
                 {gameState.currentPhase === 'ROW_CHOICE' && gameState.pendingRowPlayerId === 'player' && (
-                  <div className="mt-4 bg-amber-950/10 border border-amber-500/25 rounded-xl p-3.5 text-center animate-pulse">
-                    <span className="text-[11px] text-amber-400 font-bold tracking-wider uppercase flex items-center justify-center gap-2 font-serif">
+                  <div className="mt-4 bg-fuchsia-950/10 border border-fuchsia-500/25 rounded-xl p-3.5 text-center animate-pulse">
+                    <span className="text-[11px] text-fuchsia-400 font-bold tracking-wider uppercase flex items-center justify-center gap-2 font-serif">
                       ⚠️ OVERDUMP ACTION REQUIRED // 列選択フラグ ⚠️
                     </span>
                     <p className="text-[10px] text-zinc-450 mt-1 font-sans">
@@ -1057,9 +1057,9 @@ export default function App() {
                   id="revealed-mat"
                   className="bg-zinc-950/40 border border-zinc-800/70 rounded-3xl p-4 md:p-6 shadow-2xl relative overflow-hidden backdrop-blur-md"
                 >
-                  <div className="absolute bottom-[-10px] left-0 right-0 h-40 bg-gradient-to-t from-amber-955/5 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-[-10px] left-0 right-0 h-40 bg-gradient-to-t from-fuchsia-955/5 to-transparent pointer-events-none" />
 
-                  <h3 className="text-xs font-bold text-amber-500 uppercase tracking-widest mb-4 pb-2 border-b border-zinc-800/80 font-serif">
+                  <h3 className="text-xs font-bold text-fuchsia-500 uppercase tracking-widest mb-4 pb-2 border-b border-zinc-800/80 font-serif">
                     デュアル公開マット (PLACING)
                   </h3>
 
@@ -1073,7 +1073,7 @@ export default function App() {
                           key={p.id}
                           className={`flex flex-col items-center justify-between p-3.5 rounded-2xl border transition-all duration-300 ${
                             isNextToPlace
-                              ? 'bg-amber-950/20 border-amber-500/50 shadow-[0_0_15px_rgba(245,158,11,0.2)] scale-[1.02]'
+                              ? 'bg-fuchsia-950/20 border-fuchsia-500/50 shadow-[0_0_15px_rgba(236,72,153,0.2)] scale-[1.02]'
                               : 'bg-zinc-900/25 border-zinc-900/80'
                           }`}
                         >
@@ -1094,7 +1094,7 @@ export default function App() {
                               />
                               {p.activeSkill && (
                                 <div className="absolute -bottom-2 inset-x-0 mx-auto text-center z-10 font-mono">
-                                  <span className="bg-amber-600 border border-amber-400 text-black text-[8px] font-black px-1.5 py-0.5 rounded shadow whitespace-nowrap">
+                                  <span className="bg-fuchsia-600 border border-fuchsia-400 text-black text-[8px] font-black px-1.5 py-0.5 rounded shadow whitespace-nowrap">
                                     {p.activeSkill}
                                   </span>
                                 </div>
@@ -1108,7 +1108,7 @@ export default function App() {
 
                           <div className="mt-3.5 w-full text-center font-mono font-bold">
                             {isNextToPlace ? (
-                              <span className="text-[9px] text-amber-550 font-bold animate-pulse uppercase tracking-[0.1em] border border-amber-500/20 px-2 py-0.5 rounded block">
+                              <span className="text-[9px] text-fuchsia-550 font-bold animate-pulse uppercase tracking-[0.1em] border border-fuchsia-500/20 px-2 py-0.5 rounded block">
                                 Placing Next
                               </span>
                             ) : (
@@ -1133,7 +1133,7 @@ export default function App() {
                     <button
                       id="next-placement-step-btn"
                       onClick={handleNextPlacingStep}
-                      className="bg-gradient-to-r from-cyan-500 to-fuchsia-600 hover:from-cyan-400 hover:to-fuchsia-500 text-white font-black text-sm px-6 py-2.5 rounded-xl shadow-[0_4px_15px_rgba(6,182,212,0.3)] transition-all cursor-pointer flex items-center gap-2 uppercase tracking-wider"
+                      className="bg-gradient-to-r from-fuchsia-500 to-fuchsia-600 hover:from-fuchsia-400 hover:to-fuchsia-500 text-white font-black text-sm px-6 py-2.5 rounded-xl shadow-[0_4px_15px_rgba(236,72,153,0.3)] transition-all cursor-pointer flex items-center gap-2 uppercase tracking-wider"
                     >
                       <Swords className="w-4 h-4 fill-white" />
                       {gameState.activePlacingIndex >= gameState.placingQueue.length ? 'ターン終了へ' : '次のカードを配置'}
@@ -1159,7 +1159,7 @@ export default function App() {
                     id="user-hand-dashboard"
                     className="bg-zinc-900 border border-zinc-850 rounded-2xl p-4 md:p-6 shadow-xl relative overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t from-cyan-950/10 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-fuchsia-950/10 via-transparent to-transparent pointer-events-none" />
 
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-5 border-b border-zinc-800 pb-3">
                       <div>
@@ -1176,7 +1176,7 @@ export default function App() {
                         {selectedHandCard && (
                           <div className="text-right hidden md:block">
                             <span className="text-[9px] text-zinc-500 block">SELECTED VALUE:</span>
-                            <span className="text-sm font-black text-cyan-400 font-mono">
+                            <span className="text-sm font-black text-fuchsia-400 font-mono">
                               SYS.{selectedHandCard.value} 
                               {selectedSkill === 'VALUE_OFFSET' && skillOffsetValue !== 0 && (
                                 <span className={skillOffsetValue > 0 ? 'text-orange-400' : 'text-emerald-400'}>
@@ -1257,13 +1257,13 @@ export default function App() {
                             key={p.id}
                             className={`flex items-center justify-between px-4 py-3 rounded-xl border ${
                               isWinner
-                                ? 'bg-cyan-950/30 border-cyan-500/40 shadow-[0_0_10px_rgba(6,182,212,0.15)]'
+                                ? 'bg-fuchsia-950/30 border-fuchsia-500/40 shadow-[0_0_10px_rgba(236,72,153,0.15)]'
                                 : 'bg-zinc-900/50 border-zinc-850'
                             }`}
                           >
                             <div className="flex items-center gap-3">
                               <span className={`w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs ${
-                                isWinner ? 'bg-cyan-400 text-black' : 'bg-zinc-850 text-zinc-400'
+                                isWinner ? 'bg-fuchsia-400 text-black' : 'bg-zinc-850 text-zinc-400'
                               }`}>
                                 {idx + 1}
                               </span>
@@ -1273,7 +1273,7 @@ export default function App() {
                               </div>
                             </div>
                             <div className="text-right">
-                              <span className={`text-base font-extrabold ${isWinner ? 'text-cyan-400' : 'text-zinc-300'}`}>
+                              <span className={`text-base font-extrabold ${isWinner ? 'text-fuchsia-400' : 'text-zinc-300'}`}>
                                 {p.score} HP
                               </span>
                               <span className="text-[10px] text-zinc-500 block leading-none mt-1">
@@ -1289,7 +1289,7 @@ export default function App() {
                     <button
                       id="restart-game-btn-over"
                       onClick={() => handleStartGame()}
-                      className="bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-black py-3 px-8 rounded-xl font-black tracking-widest text-sm shadow-[0_4px_15px_rgba(6,182,212,0.4)] transition-all cursor-pointer inline-flex items-center gap-2"
+                      className="bg-gradient-to-r from-fuchsia-500 to-indigo-600 hover:from-fuchsia-400 hover:to-indigo-500 text-black py-3 px-8 rounded-xl font-black tracking-widest text-sm shadow-[0_4px_15px_rgba(236,72,153,0.4)] transition-all cursor-pointer inline-flex items-center gap-2"
                     >
                       <RotateCcw className="w-4 h-4" />
                       新しいデュエルを開始する
@@ -1319,11 +1319,11 @@ export default function App() {
               <div className="space-y-3">
                 {gameState.players.map((p, idx) => {
                   const healthPercent = Math.max(0, Math.min(100, (p.score / 66) * 100));
-                  let barColor = 'bg-cyan-500 shadow-[0_0_8px_#06b6d4]';
+                  let barColor = 'bg-fuchsia-500 shadow-[0_0_8px_#ec4899]';
                   if (healthPercent < 40) {
                     barColor = 'bg-rose-500 shadow-[0_0_8px_#f43f5e] animate-pulse';
                   } else if (healthPercent < 70) {
-                    barColor = 'bg-amber-500 shadow-[0_0_8px_#f59e0b]';
+                    barColor = 'bg-fuchsia-500 shadow-[0_0_8px_#ec4899]';
                   }
 
                   return (
@@ -1386,7 +1386,7 @@ export default function App() {
                 } else if (log.includes('ハブック') || log.includes('スキル') || log.includes('ハック:')) {
                   textCol = 'text-fuchsia-400 font-bold';
                 } else if (log.includes('盾発動') || log.includes('リンク接続')) {
-                  textCol = 'text-cyan-400 font-bold';
+                  textCol = 'text-fuchsia-400 font-bold';
                 } else if (log.includes('ROUND')) {
                   textCol = 'text-yellow-300 font-extrabold border-b border-zinc-800/60 pb-1 mt-1 block';
                 }
@@ -1412,9 +1412,9 @@ export default function App() {
               HOLOGRAPHIC MASCOT // 電脳シンボル
             </span>
             <div className="w-24 h-24">
-              <CyberBullArt glow={true} className="border-cyan-500/30" />
+              <CyberBullArt glow={true} className="border-fuchsia-500/30" />
             </div>
-            <span className="text-[10px] text-cyan-400 font-bold tracking-wider mt-3">
+            <span className="text-[10px] text-fuchsia-400 font-bold tracking-wider mt-3">
               CYBER_COW_CORE.DLL
             </span>
           </div>
